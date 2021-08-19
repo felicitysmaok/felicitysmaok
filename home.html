@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>home page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container text-center">
+      <div class="jumbotron">
+        <h1>HOME PAGE</h1>
+      </div>
+      {% for message in messages %}
+      <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>username</th>
+            <th>housename</th>
+            <th>state</th>
+            <th>district</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ k.user }}</td>
+            <td>{{ k.house }}</td>
+            <td>{{ k.state }}</td>
+            <td>{{ k.district }}</td>
+            <td>
+              <button class="btn btn-light">
+                <a class="" href="change">Edit</a>
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-light">
+                <a class="" href="delete">Delete</a>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-light" color="white">
+        <a href="logout" color="white">logout</a>
+      </button>
+    </div>
+  </body>
+</html>

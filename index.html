@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Bootstrap Content-->
+    <title>Log In</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="static/signup.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <!-- Form Heading -->
+    <div class="container text-center">
+      <h1>Log In</h1>
+    </div>
+    {% for message in messages %}
+    <div class="container text-center">
+      <h3>{{ message }}</h3>
+    </div>
+    {% endfor %}
+    <!-- Form Container -->
+    <div class="container">
+      <!-- Form -->
+      <form method="POST" action=" ">
+        {% csrf_token %}
+        <!-- Form Content -->
+        <div class="form-group">
+          <label>User Name</label>
+          <input
+            name="user"
+            type="text"
+            class="form-control"
+            id="user"
+            placeholder="username"
+            required
+          />
+          <label>Password</label>
+          <input
+            name="pwd"
+            type="password"
+            class="form-control"
+            id="user"
+            placeholder="password"
+            required
+          />
+        </div>
+
+        <!-- Form Button -->
+        <div class="form-group">
+          <button class="btn btn-primary" id="login" href="index">
+            Log In
+          </button>
+        </div>
+
+        <!-- Form Footer Link -->
+        <div class="formfooter">
+          <a class="link" id="forgotpassword" href="#">Forgot Passowrd?</a>
+          <a class="link" id="Sign Up" href="signup">Sign Up </a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

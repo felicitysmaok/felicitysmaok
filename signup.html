@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="static/signup.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid text-center">
+      <h1>Fill The Form</h1>
+    </div>
+    {% for message in messages %}
+    <div class="container text-center">
+      <h5 class="message">{{message}}</h5>
+    </div>
+    {% endfor %}
+    <div class="container">
+      <form method="POST" action="signup">
+        {% csrf_token %}
+        <div class="form-group">
+          <label>User Name</label>
+          <input
+            name="username"
+            type="text"
+            class="form-control"
+            id="user"
+            placeholder="User Name"
+            required
+          />
+          <label>Password</label>
+          <input
+            name="pwd"
+            type="password"
+            class="form-control"
+            id="pwd"
+            placeholder="Password"
+            required
+          />
+          <label>Retype password</label>
+          <input
+            name="pwd2"
+            type="password"
+            class="form-control"
+            id="pwd2"
+            placeholder="Retype Password"
+            required
+          />
+          <label>House Name or Number</label>
+          <input
+            name="house"
+            type="text"
+            class="form-control"
+            id="house"
+            placeholder="House Name or Number"
+            required
+          />
+          <label>State</label>
+          <input
+            name="state"
+            type="text"
+            class="form-control"
+            id="state"
+            placeholder="State"
+            required
+          />
+          <label>District</label>
+          <input
+            name="district"
+            type="text"
+            class="form-control"
+            id="district"
+            placeholder="District"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

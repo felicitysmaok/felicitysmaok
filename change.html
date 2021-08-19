@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>change page</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container text-center">
+      <div class="jumbotron">
+        <h1>Edit Your Profile</h1>
+      </div>
+    </div>
+    <div class="container">
+      <form method="POST" action="change">
+        {% csrf_token %}
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>New password</th>
+              <th>Retype New Password</th>
+              <th>House</th>
+              <th>State</th>
+              <th>District</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="text" name="euser" value="{{ n.user }}" />
+              </td>
+              <td>
+                <input
+                  type="password"
+                  name="epassword"
+                  value="{{ n.password}}"
+                />
+              </td>
+              <td>
+                <input
+                  type="password"
+                  name="epassword2"
+                  value="{{ n.password}}"
+                />
+              </td>
+              <td>
+                <input type="text" name="ehouse" value="{{ n.house}}" />
+              </td>
+              <td>
+                <input type="text" name="estate" value="{{ n.state }}" />
+              </td>
+              <td>
+                <input type="text" name="edistrict" value="{{ n.district }}" />
+              </td>
+              <td>
+                <button class="btn btn-primary" href="change">save</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
